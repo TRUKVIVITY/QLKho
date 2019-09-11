@@ -6,13 +6,22 @@ $ git config --global user.email you-email@email.com
 $ git config --list
 
 #tạo thư mục làm việc > mở folder làm việc > git bash here > gõ lệnh, hoặc lệnh cd vào folder cũng đc. 
-#create a new directory, open it and perform a
-$ git init
+	#create a new directory, open it and perform a
+	$ git init
 
-#create a repository
-$ git clone link-repository-like: /path/to/folder-repository or username@host:/path/to/SSH||HTTPS-repository
+	#add remote server repository
+	$ git remote add origin ssh@host:/your-repository
 
-#if using Github repository clone with SSH. first!
+#or
+	#download clone a repository to directory.
+	$ git clone link-repository-like: /path/to/folder-repository or username@host:/path/to/SSH||HTTPS-repository
+	#using this repository to your remote repository.
+	$ cd ticgit
+	$ git remote origin
+	
+#but first you should generating SSH key and add SSH-key to your github account!
+
+#if using Github repository with SSH. first!
 #generating a new SSH key
 $ ssh-keygen -t rsa -b 4096 -C "you_email@email.com"
 	This creates a new ssh key, using the provided email as a label.
@@ -37,7 +46,4 @@ $ clip < ~/.ssh/id_rsa.pub
 
 #goto Setting in your Github account > SSH and GPG keys > add new SSH key
 
-#finally go to your git bash and try again 
-$ git clone ssh@host:/your-repository
-
-#now you can "git commit -m" to your repository on github account.
+#finally go to your git bash and now you can "git push" to your repository on github account.
