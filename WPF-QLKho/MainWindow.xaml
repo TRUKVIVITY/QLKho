@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_QLKho"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+
+        xmlns:uc="clr-namespace:WPF_QLKho.UserControlMine"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        
+        DataContext="{StaticResource MainVM}"
+        Name="mainWindow"
+        Title="QLKHO" Height="450" Width="800">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}">
+                
+            </i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+    
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--menu-->
+            <Grid Grid.Row="0">
+                
+                <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Margin" Value="2 4 2 4"></Setter>
+                                <Setter Property="Width" Value="50"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
+                    <Button ToolTip="Save">
+                        <materialDesign:PackIcon Kind="ContentSave" />
+                    </Button>
+                    <Button ToolTip="Save">
+                        <materialDesign:PackIcon Kind="ContentSave" />
+                    </Button>
+                    <Button ToolTip="Save">
+                        <materialDesign:PackIcon Kind="ContentSave" />
+                    </Button>
+                </StackPanel>
+                
+            </Grid>
+            
+            <!--main-->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--filter-->
+                <Grid Grid.Row="0"></Grid>
+                
+                <!--list-->
+                <Grid Grid.Row="0"></Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
