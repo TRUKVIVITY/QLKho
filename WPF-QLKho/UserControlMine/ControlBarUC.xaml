@@ -21,7 +21,7 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
-        <materialDesign:ColorZone Mode="Accent">
+        <materialDesign:ColorZone Mode="PrimaryLight">
             <DockPanel>
                 
                 <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
@@ -32,12 +32,12 @@
                     </Style>
                     </StackPanel.Resources>
 
-                    <Button ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded" Background="ForestGreen"
+                    <Button ToolTip="Thu về taskbar" ToolBar.OverflowMode="AsNeeded" Background="#f7d1ff"
                             Command="{Binding MinimizeWindowCommand}"
                             CommandParameter="{Binding ElementName=ucControlBar}">
                         <materialDesign:PackIcon Kind="WindowMinimize"></materialDesign:PackIcon>
                     </Button>
-                    <Button ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded" Background="ForestGreen"
+                    <Button ToolTip="phóng to màn hình" ToolBar.OverflowMode="AsNeeded" Background="#f7d1ff"
                             Command="{Binding MaximizeWindowCommand}"
                             CommandParameter="{Binding ElementName=ucControlBar}">
                         <materialDesign:PackIcon Kind="WindowMaximize"></materialDesign:PackIcon>

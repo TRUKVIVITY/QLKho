@@ -23,8 +23,8 @@
 
         Name="loginWindow"
         Title="Login" Height="350" Width="600">
-    
-    <Grid>
+
+    <Grid Background="#f6e6ff">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
