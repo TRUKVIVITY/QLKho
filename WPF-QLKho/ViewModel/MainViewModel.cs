@@ -13,6 +13,8 @@ namespace WPF_QLKho.ViewModel
     {
         // mọi thứ xử lý sẽ nằm trong này
         public ICommand LoadedWindowCommand { get; set; }
+        public ICommand UnitCommand { get; set; }
+
         public MainViewModel()
         {
             //MessageBox.Show("Đã vào trong MainViewModel -> DataContext của mainwindow.xaml");
@@ -24,8 +26,10 @@ namespace WPF_QLKho.ViewModel
                 loginWindow.ShowDialog();
 
             });
-            
-            
+
+            //When Click Button have {Binding UnitCommand} => UnitWindow show with dialog status.
+            UnitCommand = new RelayCommand<object>((p) => { return true; }, (p) => {UnitWindow wd = new UnitWindow(); wd.ShowDialog();});
+
         }
     }
 }
