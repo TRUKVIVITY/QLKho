@@ -13,7 +13,14 @@ namespace WPF_QLKho.ViewModel
     {
         // mọi thứ xử lý sẽ nằm trong này
         public ICommand LoadedWindowCommand { get; set; }
+        
+        public ICommand InputCommand { get; set; }
+        public ICommand OutputCommand { get; set; }
+        public ICommand ObjectCommand { get; set; }
         public ICommand UnitCommand { get; set; }
+        public ICommand SuplierCommand { get; set; }
+        public ICommand CustomerCommand { get; set; }
+        public ICommand UserCommand { get; set; }
 
         public MainViewModel()
         {
@@ -27,8 +34,15 @@ namespace WPF_QLKho.ViewModel
 
             });
 
-            //When Click Button have {Binding UnitCommand} => UnitWindow show with dialog status.
+            InputCommand = new RelayCommand<object>((p) => { return true; }, (p) => { InputWindow wd = new InputWindow(); wd.ShowDialog(); });
+            OutputCommand = new RelayCommand<object>((p) => { return true; }, (p) => { OutputWindow wd = new OutputWindow(); wd.ShowDialog(); });
+            ObjectCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ObjectWindow wd = new ObjectWindow(); wd.ShowDialog(); });
+            //When Click Button include {Binding UnitCommand} => UnitWindow show with dialog status.
             UnitCommand = new RelayCommand<object>((p) => { return true; }, (p) => {UnitWindow wd = new UnitWindow(); wd.ShowDialog();});
+            SuplierCommand = new RelayCommand<object>((p) => { return true; }, (p) => { SuplierWindow wd = new SuplierWindow(); wd.ShowDialog(); });
+            CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { CustomerWindow wd = new CustomerWindow(); wd.ShowDialog(); });
+            UserCommand = new RelayCommand<object>((p) => { return true; }, (p) => { UserWindow wd = new UserWindow(); wd.ShowDialog(); });
+
 
         }
     }
