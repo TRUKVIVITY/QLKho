@@ -1,0 +1,69 @@
+/*comment*/
+--comment
+--------------------------------------------
+/*Inventory Management Database*/
+--------------------------------------------
+Supplier /*Nhà cung cấp vật tư*/
+	Id
+	SupplierName
+	Address
+	Phone
+	Email
+	ContractDate
+	MoreInfo
+--------------------------------------------
+Unit /*Đơn vị đo*/
+	Id
+	UnitName
+--------------------------------------------
+Objects /*Vật tư*/
+	Id
+	ObjectsName
+	QRCode
+	BarCode
+	IdUnit
+	IdSupplier
+	/*if want save Image, add Table 
+	ObjectImage 
+		Id
+		IdObjects
+		ImageName	
+	*/
+--------------------------------------------
+Customer /*Khách hàng*/
+	Id
+	CustomerName
+	Address
+	Phone
+	Email
+	MoreInfo
+	ContractDate
+---------------------------------------------
+Input /*Phiếu nhập*/
+	Id
+	DateInput
+---------------------------------------------
+InputInfo /*Thông tin phiếu nhập*/
+	Id
+	IdObjects
+	IdInput
+	Count
+	InputPrice
+	OutputPrice
+	Status
+----------------------------------------------
+Output /*Phiếu xuất*/
+	Id
+	DateOutput /*Default Current Day*/
+	IdCustomer /*Make default Guests Customer*/
+	VATax /*VAT 10%*/
+----------------------------------------------
+OutputInfo /*Thông tin phiếu xuất*/
+	Id
+	IdObjects
+	IdInputInfo /*Lấy thông tin giá (OutputPrice) của sản phẩm...*/
+	Count
+	JungleTax
+	Sale /*% sale cho từng sản phẩm :)*/
+	Status
+----------------------------------------------
