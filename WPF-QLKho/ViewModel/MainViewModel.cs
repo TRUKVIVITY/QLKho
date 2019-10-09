@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using WPF_QLKho.Model;
 
 namespace WPF_QLKho.ViewModel
 {
@@ -27,10 +28,28 @@ namespace WPF_QLKho.ViewModel
             //MessageBox.Show("Đã vào trong MainViewModel -> DataContext của mainwindow.xaml");
 
             //When MainWindow is loaded > run LoginWindow
-            LoadedWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => {
-
+            LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
+                if (p == null)
+                {
+                    return;
+                }
+                p.Hide();
                 LoginWindow loginWindow = new LoginWindow();
                 loginWindow.ShowDialog();
+
+                if (loginWindow.DataContext == null)
+                {
+                    return;
+                }
+                var loginVM = loginWindow.DataContext as LoginViewModel;
+                if (loginVM.IsLogin)
+                {
+                    p.Show();
+                }
+                else
+                {
+                    p.Close();
+                }
 
             });
 
@@ -43,6 +62,7 @@ namespace WPF_QLKho.ViewModel
             CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { CustomerWindow wd = new CustomerWindow(); wd.ShowDialog(); });
             UserCommand = new RelayCommand<object>((p) => { return true; }, (p) => { UserWindow wd = new UserWindow(); wd.ShowDialog(); });
 
+            //MessageBox.Show(DataProvider.Ins.DB.Users.First().DisplayName);
 
         }
     }

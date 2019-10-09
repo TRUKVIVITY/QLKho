@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b08df9c330334570bfe2b738e4c4c0f3" Name="Diagram1">
+        <EntityTypeShape EntityType="QLKhoModel.Customer" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.Img" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.Input" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.InputInfo" Width="1.5" PointX="8.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.OutputInfo" Width="1.5" PointX="10.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.Supplier" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.tObject" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.tOutput" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.Unit" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.UserRole" Width="1.5" PointX="8.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKhoModel.User" Width="1.5" PointX="11" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="QLKhoModel.FK__tOutput__IdCusto__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__Img__IdObject__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__Input__IdSupplie__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__InputInfo__IdInp__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__InputInfo__IdObj__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__OutputInf__IdInp__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__OutputInf__IdObj__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__OutputInf__IdOut__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__tObject__IdUnit__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKhoModel.FK__Users__IdUserRol__5CD6CB2B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
