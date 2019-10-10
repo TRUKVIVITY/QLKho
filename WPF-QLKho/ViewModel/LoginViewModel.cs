@@ -52,7 +52,7 @@ namespace WPF_QLKho.ViewModel
 
             var accCount = DataProvider.Ins.DB.Users.Where(x => x.UserName == UserName && x.Password == passEncode).Count();
 
-            if(accCount > 0 || UserName == "rumi")
+            if(accCount > 0)
             {
                 IsLogin = true;
                 p.Close();
