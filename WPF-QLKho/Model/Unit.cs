@@ -11,9 +11,8 @@ namespace WPF_QLKho.Model
 {
     using System;
     using System.Collections.Generic;
-    using WPF_QLKho.ViewModel;
-
-    public partial class Unit:BaseViewModel
+    
+    public partial class Unit
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Unit()
@@ -22,13 +21,9 @@ namespace WPF_QLKho.Model
         }
     
         public int Id { get; set; }
-        private string _UnitName;
-        public string UnitName
-        {
-            get => _UnitName; set { _UnitName = value; OnPropertyChanged(); }
-        }
-
-            [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public string UnitName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tObject> tObjects { get; set; }
     }
 }

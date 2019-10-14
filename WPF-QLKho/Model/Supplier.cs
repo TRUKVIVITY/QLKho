@@ -11,23 +11,37 @@ namespace WPF_QLKho.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Supplier
+    using WPF_QLKho.ViewModel;
+
+    public partial class Supplier:BaseViewModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Supplier()
         {
             this.Inputs = new HashSet<Input>();
         }
-    
-        public int Id { get; set; }
-        public string SupplierName { get; set; }
-        public string sAddress { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public Nullable<System.DateTime> ContractDate { get; set; }
-        public string MoreInfo { get; set; }
-    
+
+        private string _SupplierName;
+        public string SupplierName { get => _SupplierName; set { _SupplierName = value; OnPropertyChanged(); } }
+
+        private string _sAddress;
+        public string sAddress { get => _sAddress; set { _sAddress = value; OnPropertyChanged(); } }
+
+        private string _Phone;
+        public string Phone { get => _Phone; set { _Phone = value; OnPropertyChanged(); } }
+
+        private string _Email;
+        public string Email { get => _Email; set { _Email = value; OnPropertyChanged(); } }
+
+        private System.DateTime? _ContractDate;
+        public System.DateTime? ContractDate { get => _ContractDate; set { _ContractDate = value; OnPropertyChanged(); } }
+
+        private string _MoreInfo;
+        public string MoreInfo { get => _MoreInfo; set { _MoreInfo = value; OnPropertyChanged(); } }
+
+        private int _Id;
+        public int Id { get => _Id; set { _Id = value; OnPropertyChanged(); } }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Input> Inputs { get; set; }
     }

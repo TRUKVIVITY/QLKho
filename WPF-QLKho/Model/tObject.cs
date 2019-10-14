@@ -29,7 +29,7 @@ namespace WPF_QLKho.Model
         public Nullable<int> IdUnit { get; set; }
         public string Model { get; set; }
         public string Manufacturer { get; set; }
-        public string Country { get; set; }
+        public string Origin { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Img> Imgs { get; set; }

@@ -23,5 +23,6 @@ namespace WPF_QLKho
         {
             InitializeComponent();
         }
+
     }
 }

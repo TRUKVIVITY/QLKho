@@ -94,11 +94,11 @@ namespace WPF_QLKho.ViewModel
                 int sumInput = 0;
                 int sumOutput = 0;
 
-                if (inputList != null)
+                if (inputList != null && inputList.Count() > 0)
                 {
                     sumInput = (int)inputList.Sum(x => x.Counts);
                 }
-                if(outputList != null)
+                if(outputList != null && outputList.Count() > 0)
                 {
                     sumOutput = (int)outputList.Sum(x => x.Counts);
                 }
