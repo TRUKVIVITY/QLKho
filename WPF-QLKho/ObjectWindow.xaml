@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPF_QLKho"
         mc:Ignorable="d"
         
+        DataContext="{StaticResource ObjectVM}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
